@@ -1,9 +1,8 @@
-import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
-import { FaTwitter, FaTumblr } from "react-icons/fa";
-import Button from "../Button/Button";
-import "./Card.css";
-import requestQuote from "../../service/requestQuote";
 import { useEffect, useState } from "react";
+import { FaTumblr, FaTwitter } from "react-icons/fa";
+import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import requestQuote from "../../service/requestQuote";
+import "./Card.css";
 
 interface CardProps {
   fontColor: string;
@@ -39,52 +38,45 @@ const Card: React.FC<CardProps> = ({ fontColor, updateColor }) => {
     encodeURIComponent(randomQuote!) +
     "&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button";
 
-  const tweet = () => {
-    window.open(twitterUrl);
-  };
-
-  const tumbrl = () => {
-    window.open(tumbrlUrl);
-  };
-
   return (
-    <article className="card">
-      <section className="cardSection">
-        <div className="phraseContent">
-          <h1 style={{ color: fontColor, fontSize: "3vw" }}>
-            <RiDoubleQuotesL style={{ color: fontColor }} />
-            {" " + randomQuote+" "}
-            <RiDoubleQuotesR style={{ color: fontColor }} />
-          </h1>
+    <article id="quote-box">
+      <h1 id="text" style={{ color: fontColor, fontSize: "3vw" }}>
+        <RiDoubleQuotesL style={{ color: fontColor }} />
+
+        {" " + randomQuote + " "}
+
+        <RiDoubleQuotesR style={{ color: fontColor }} />
+      </h1>
+      <h3 id="author">{author}</h3>
+      <div className="buttonDisplayer">
+        <div>
+          <a
+            href={twitterUrl}
+            id="tweet-quote"
+            style={{ backgroundColor: fontColor, color: "white" }}
+          >
+            <FaTwitter />
+            Twitter
+          </a>
+
+          <a
+            href={tumbrlUrl}
+            id="tweet-quote"
+            style={{ backgroundColor: fontColor, color: "white" }}
+          >
+            <FaTumblr />
+            Tumblr
+          </a>
         </div>
-        <div className="phraseAuthorContainer">
-          <h3 className="quoteAuthor">{author}</h3>
-        </div>
-        <div className="buttonDisplayer">
-          <div>
-            <Button
-              color={fontColor}
-              icon={<FaTwitter />}
-              largeButton={false}
-              onclick={() => tweet()}
-            />
-            <Button
-              color={fontColor}
-              icon={<FaTumblr />}
-              largeButton={false}
-              onclick={() => tumbrl()}
-            />
-          </div>
-          <div>
-            <Button
-              color={fontColor}
-              text="Get andom Quote"
-              largeButton={true}
-              onclick={() => getRandomQuote()}
-            />
-          </div>
-        </div>
-      </section>
+        <button
+          id="new-quote"
+          color={fontColor}
+          onClick={() => getRandomQuote()}
+          style={{ backgroundColor: fontColor }}
+        >
+          Get random quote
+        </button>
+      </div>
     </article>
   );
 };

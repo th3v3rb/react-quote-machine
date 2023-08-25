@@ -1,10 +1,10 @@
 .button {
   font-size: 2vw;
   color: white;
-  width: 3vw;
+  width: 25vw;
   height: 5vw;
   margin: 0.5rem;
-  outline: 1px solidrgba(0, 0, 0, 0.301) k;
+  outline: 1px solid rgba(0, 0, 0, 0.301);
   border-radius: 5px;
   border: none;
   box-shadow: 0.124rem 0.123rem 1rem black;

@@ -1,28 +1,19 @@
-import { ReactNode } from "react";
 import "./Button.css";
 
 interface ButtonProps {
   color: string;
   text?: string;
-  icon?: ReactNode;
   largeButton?: boolean;
   onclick: React.MouseEventHandler;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  color,
-  text,
-  icon,
-  largeButton,
-  onclick,
-}) => {
+const Button: React.FC<ButtonProps> = ({ color, text, onclick }) => {
   return (
     <button
       onClick={onclick}
       className="button"
-      style={{ backgroundColor: color, width: largeButton ? "25vw" : "5vw" }}
+      style={{ backgroundColor: color }}
     >
-      {icon ? icon : null}
       {text ? text : null}
     </button>
   );
