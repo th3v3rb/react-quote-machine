@@ -49,14 +49,13 @@ const Card: React.FC<CardProps> = ({ fontColor, updateColor }) => {
       </h1>
       <h3 id="author">{author}</h3>
       <div className="buttonDisplayer">
-        <div>
+        <div className="buttonContainer">
           <a
             href={twitterUrl}
             id="tweet-quote"
             style={{ backgroundColor: fontColor, color: "white" }}
           >
             <FaTwitter />
-            Twitter
           </a>
 
           <a
@@ -65,7 +64,6 @@ const Card: React.FC<CardProps> = ({ fontColor, updateColor }) => {
             style={{ backgroundColor: fontColor, color: "white" }}
           >
             <FaTumblr />
-            Tumblr
           </a>
         </div>
         <button

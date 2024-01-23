@@ -4,8 +4,8 @@
   background-color: #ffffff;
   box-shadow: 0.5rem 0.5rem 5rem rgb(22, 22, 21);
   border-radius: 5px;
-  width: 70vw;
-  height: 60vw;
+  width: 50%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,10 +38,13 @@
 
 #tweet-quote {
   font-size: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   color: white;
-  width: fit-content;
-  height: fit-content;
-  display: block;
+  width: 5vw;
+  height: 5vw;
   margin: 0.5rem;
   outline: 1px solid rgba(0, 0, 0, 0.301);
   border-radius: 5px;
@@ -49,7 +52,6 @@
   box-shadow: 0.124rem 0.123rem 1rem black;
   transition: all 200ms ease-in;
   text-decoration: none;
-  padding: 2vw;
 }
 
 #tweet-quote:hover {
@@ -73,4 +75,8 @@
 #new-quote:hover {
   opacity: 0.8;
   box-shadow: 0.1rem 0.1rem 0.6rem black;
+}
+
+.buttonContainer {
+  display: flex;
 }

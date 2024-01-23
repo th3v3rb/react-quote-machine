@@ -5,15 +5,15 @@ import Card from "./components/Card/Card";
 import Container from "./components/Container/Container";
 
 function App() {
-  const [color, setColor] = useState(getRandomColor())
+  const [color, setColor] = useState(getRandomColor());
 
   const updateColor = () => {
-    setColor(getRandomColor())
-  }
+    setColor(getRandomColor());
+  };
 
   return (
     <Container backgroundColor={color}>
-      <Card fontColor={color} updateColor={updateColor}/>
+      <Card fontColor={color} updateColor={updateColor} />
     </Container>
   );
 }
